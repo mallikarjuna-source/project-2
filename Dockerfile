@@ -1,2 +1,2 @@
 FROM nginx
-COPY docker   /usr/share/nginx/html
+COPY /docker/index.html    /usr/share/nginx/html
