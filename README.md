@@ -1,15 +1,28 @@
-# simple-java-maven-app
+# Calculator App
+A very basic calculator application created with Java **Swing**. 
 
-This repository is for the
-[Build a Java app with Maven](https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/)
-tutorial in the [Jenkins User Documentation](https://jenkins.io/doc/).
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-The repository contains a simple Java application which outputs the string
-"Hello world!" and is accompanied by a couple of unit tests to check that the
-main application works as expected. The results of these tests are saved to a
-JUnit XML report.
+## Thank You!
+Please ⭐️ this repo and share it with others
 
-The `jenkins` directory contains an example of the `Jenkinsfile` (i.e. Pipeline)
-you'll be creating yourself during the tutorial and the `scripts` subdirectory
-contains a shell script with commands that are executed when Jenkins processes
-the "Deliver" stage of your Pipeline.
+### Screenshots
+Scientific / Dark |  Standard / Colored
+:------------------:|:-------------------
+![Calculator - screenshot](screenshots/dark.PNG) | ![Calculator - screenshot](screenshots/colored.PNG)
+
+### Requirements 🔧
+* Java version 8 or higher.
+
+### Installation 🔌
+1. Press the **Fork** button (top right the page) to save copy of this project on your account.
+
+2. Download the repository files (project) from the download section or clone this project by typing in the bash the following command:
+
+       git clone https://github.com/HouariZegai/Calculator.git
+3. Imported it in Intellij IDEA or any other Java IDE.
+4. Run the application :D
+
+### Contributing 💡
+If you want to contribute to this project and make it better with new ideas, your pull request is very welcomed.
+If you find any issue just put it in the repository issue section, thank you.
