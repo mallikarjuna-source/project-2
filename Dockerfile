@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine as builder
 RUN mkdir -p /app/source
 COPY . /app/source
 WORKDIR /app/source
-RUN ./mvnw clean package
+RUN ./mvn clean package
 
 
 FROM builder
