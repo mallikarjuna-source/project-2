@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+   tools {
+      maven 'M2_HOME'
+    }
+
+    stages{
+        stage("git clone"){
+            steps{
+                git 'https://github.com/mallikarjuna-source/project-2.git'
+            }
+        }
+        
+        stage("build"){
+            steps{
+                sh "docker build -t myapp ."
+                
+            }
+        }
+    }
+}
