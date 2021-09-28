@@ -1,16 +1,11 @@
-FROM openjdk:8 AS BUILD_IMAGE
-ENV APP_HOME=/root/dev/myapp/
-RUN mkdir -p $APP_HOME/src/main/java
-WORKDIR $APP_HOME
-COPY build.gradle gradlew gradlew.bat $APP_HOME
-COPY gradle $APP_HOME/gradle
-# download dependencies
-RUN ./gradlew build -x :bootRepackage -x test --continue
-COPY . .
-RUN ./gradlew build
+FROM openjdk:8-jdk-alpine as builder
+RUN mkdir -p /app/source
+COPY . /app/source
+WORKDIR /app/source
+RUN ./mvnw clean package
 
-FROM openjdk:8-jre
-WORKDIR /root/
-COPY --from=BUILD_IMAGE /root/dev/myapp/build/libs/myapp.jar .
+
+FROM builder
+COPY --from=builder /app/source/target/*.jar /app/app.jar
 EXPOSE 8090
-CMD ["java","-jar","myapp.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom", "-jar", "/app/app.jar"]
